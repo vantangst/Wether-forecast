@@ -6,8 +6,11 @@ import com.example.weatherforecast.data.model.api.ApiCode
 import com.example.weatherforecast.data.model.api.ApiResponse
 import com.example.weatherforecast.data.model.api.ApiError
 import java.net.ConnectException
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class ForecastRepository(private val apiService: ApiService) {
+@Singleton
+class ForecastRepository @Inject constructor(private val apiService: ApiService) {
     suspend fun getDailyForecast(
         keyword: String,
         forecastDays: Int = 7,

@@ -22,22 +22,11 @@ interface ApiService {
 
 
 object ApiServiceImpl {
-
-    private val httpClient = OkHttpClient.Builder()
-
-    private val builder = Retrofit.Builder()
-        .baseUrl(BuildConfig.BASE_URL)
-        .addConverterFactory(GsonConverterFactory.create())
-
-    private var retrofit = builder.build()
-
-
-    fun getApiService(): ApiService {
-        httpClient.connectTimeout(30, TimeUnit.SECONDS)
-        httpClient.readTimeout(30, TimeUnit.SECONDS)
-        httpClient.writeTimeout(30, TimeUnit.SECONDS)
-        builder.client(httpClient.build())
-        retrofit = builder.build()
+    fun build(client: OkHttpClient): ApiService {
+        val builder = Retrofit.Builder()
+            .baseUrl(BuildConfig.BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+        val retrofit = builder.client(client).build()
         return retrofit.create(ApiService::class.java)
     }
 }
