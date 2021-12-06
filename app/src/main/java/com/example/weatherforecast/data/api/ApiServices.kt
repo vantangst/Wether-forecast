@@ -8,11 +8,10 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
-import java.util.concurrent.TimeUnit
 
 
 interface ApiService {
-    @GET(NetworkEndpoint.DAILY_FORECAST)
+    @GET(ApiEndpoint.DAILY_FORECAST)
     suspend fun getDailyForecast(
         @Query("q") keyword: String,
         @Query("cnt") forecastDays: Int,
