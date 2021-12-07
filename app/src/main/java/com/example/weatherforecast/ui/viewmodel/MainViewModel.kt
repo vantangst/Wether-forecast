@@ -1,5 +1,7 @@
 package com.example.weatherforecast.ui.viewmodel
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.weatherforecast.BuildConfig
@@ -15,6 +17,9 @@ import javax.inject.Inject
 class MainViewModel @Inject constructor(
     private val repository: ForecastRepository
 ) : ViewModel() {
+
+    private val _isEnableSearchButton = MutableLiveData(false)
+    val isEnableSearchButton: LiveData<Boolean> = _isEnableSearchButton
 
     fun searchForecast(
         keyword: String,
@@ -38,6 +43,14 @@ class MainViewModel @Inject constructor(
                 onError(result.message())
             }
         }
+    }
+
+    fun handleSearchChange(keyword: String) {
+        _isEnableSearchButton.postValue(validateSearchInput(keyword))
+    }
+
+    private fun validateSearchInput(keyword: String): Boolean {
+        return (keyword.length >= 3)
     }
 
 }

@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherforecast.R
+import com.example.weatherforecast.extension.afterTextChanged
 import com.example.weatherforecast.ui.adapter.ForecastAdapter
 import com.example.weatherforecast.ui.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initView()
+        observeData()
     }
 
     private fun initView() {
@@ -50,6 +52,7 @@ class MainActivity : AppCompatActivity() {
         btnSearch.setOnClickListener {
             fetchForecast(edtSearch.text.toString())
         }
+        edtSearch.afterTextChanged { viewModel.handleSearchChange(it) }
     }
 
     private fun fetchForecast(keyword: String) {
@@ -76,6 +79,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun observeData() {
-
+        viewModel.isEnableSearchButton.observe(this) {
+            btnSearch.isEnabled = it
+        }
     }
 }
