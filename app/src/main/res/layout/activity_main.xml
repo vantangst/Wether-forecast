@@ -12,7 +12,19 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingEnd="@dimen/loading_progress_edit_text_size"
+        android:paddingStart="0dp"
         android:autofillHints="@string/search_forecast_hint" />
+
+    <ProgressBar
+        android:id="@+id/pbLoading"
+        android:visibility="gone"
+        android:layout_width="@dimen/loading_progress_edit_text_size"
+        android:layout_height="@dimen/loading_progress_edit_text_size"
+        app:layout_constraintTop_toTopOf="@id/edtSearch"
+        app:layout_constraintBottom_toBottomOf="@id/edtSearch"
+        app:layout_constraintEnd_toEndOf="@id/edtSearch"
+        tools:visibility="visible"/>
 
     <Button
         android:id="@+id/btnSearch"
