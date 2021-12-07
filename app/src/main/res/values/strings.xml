@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Weather Forecast</string>
+    <string name="btn_get_weather">Get Weather</string>
+    <string name="search_forecast_hint">Input your city name</string>
 </resources>
