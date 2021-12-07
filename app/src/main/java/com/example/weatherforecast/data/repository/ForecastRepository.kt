@@ -15,10 +15,11 @@ class ForecastRepository @Inject constructor(private val apiService: ApiService)
         keyword: String,
         forecastDays: Int = 7,
         appId: String,
+        unitsType: String,
     ): ApiResponse<ForecastModel?, ApiError?> {
         val apiResponse = ApiResponse<ForecastModel?, ApiError?>()
         return try {
-            val result = apiService.getDailyForecast(keyword, forecastDays, appId)
+            val result = apiService.getDailyForecast(keyword, forecastDays, appId, unitsType)
             apiResponse.code(result.code())
             if (result.isSuccessful) {
                 apiResponse.result(result.body())

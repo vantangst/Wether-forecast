@@ -2,6 +2,12 @@ package com.example.weatherforecast.data.model
 
 import com.google.gson.annotations.SerializedName
 
+enum class TemperatureType (val value: String) {
+    K("Default"),
+    C("Metric"),
+    F("Imperial"),
+}
+
 data class ForecastModel(
     @SerializedName("city") var city: City? = null,
     @SerializedName("cod") var cod: String? = null,

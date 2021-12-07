@@ -16,6 +16,7 @@ interface ApiService {
         @Query("q") keyword: String,
         @Query("cnt") forecastDays: Int,
         @Query("appid") appId: String,
+        @Query("units") unitsType: String,
     ): Response<ForecastModel?>
 }
 
