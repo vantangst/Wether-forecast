@@ -8,6 +8,12 @@ enum class TemperatureType (val value: String) {
     F("Imperial"),
 }
 
+enum class TemperatureUnitLabel (val value: String) {
+    K("K"),
+    C("°C"),
+    F("°F"),
+}
+
 data class ForecastModel(
     @SerializedName("city") var city: City? = null,
     @SerializedName("cod") var cod: String? = null,
@@ -58,7 +64,7 @@ data class Weather(
 )
 
 data class Forecast(
-    @SerializedName("dt") var dt: Int? = null,
+    @SerializedName("dt") var date: Long? = null,
     @SerializedName("sunrise") var sunrise: Int? = null,
     @SerializedName("sunset") var sunset: Int? = null,
     @SerializedName("temp") var temp: Temperature?,
