@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherforecast.R
@@ -32,6 +33,13 @@ class MainActivity : AppCompatActivity() {
         btnSearch = findViewById(R.id.btnSearch)
         rvForecast = findViewById(R.id.rvForecast)
         rvForecast.layoutManager = LinearLayoutManager(this)
+        rvForecast.setHasFixedSize(true)
+        rvForecast.addItemDecoration(
+            DividerItemDecoration(
+                this,
+                DividerItemDecoration.VERTICAL,
+            )
+        )
         forecastAdapter = ForecastAdapter()
         rvForecast.adapter = forecastAdapter
         btnSearch.setOnClickListener {
