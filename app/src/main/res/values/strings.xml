@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Weather Forecast</string>
     <string name="btn_get_weather">Get Weather</string>
-    <string name="search_forecast_hint">Input your city name</string>
+    <string name="search_forecast_hint">Input your city name (at least 3 characters)</string>
     <string name="label_date_with_value">Date: %s</string>
     <string name="label_avg_temperature_with_value">Average temperature: %s</string>
     <string name="label_pressure_with_value">Pressure: %d</string>
