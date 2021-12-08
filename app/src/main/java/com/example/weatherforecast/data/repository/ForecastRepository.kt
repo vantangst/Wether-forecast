@@ -5,7 +5,7 @@ import com.example.weatherforecast.data.model.ForecastModel
 import com.example.weatherforecast.data.model.api.ApiCode
 import com.example.weatherforecast.data.model.api.ApiResponse
 import com.example.weatherforecast.data.model.api.ApiError
-import java.net.ConnectException
+import java.net.UnknownHostException
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -28,7 +28,7 @@ class ForecastRepository @Inject constructor(private val apiService: ApiService)
                 apiResponse.message(result.message())
                 apiResponse.error(ApiError(result.code(), result.message()))
             }
-        } catch (e: ConnectException) {
+        } catch (e: UnknownHostException) {
             apiResponse.error(ApiError(ApiCode.LOST_CONNECTION.value, "Connection exception"))
         } catch (e: Exception) {
             apiResponse.error(ApiError(ApiCode.UNKNOWN.value, "unknown exception"))

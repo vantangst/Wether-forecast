@@ -40,7 +40,7 @@ class MainViewModel @Inject constructor(
                     onCompleted(it.list)
                 }
             } else {
-                onError(result.message())
+                onError(result.error()?.message)
             }
         }
     }
