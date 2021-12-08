@@ -7,4 +7,5 @@
     <string name="label_pressure_with_value">Pressure: %d</string>
     <string name="label_humidity_with_value">Humidity: %s</string>
     <string name="label_description_with_value">Description: %s</string>
+    <string name="common_error">Opps! Something went wrong.\nPlease try again</string>
 </resources>

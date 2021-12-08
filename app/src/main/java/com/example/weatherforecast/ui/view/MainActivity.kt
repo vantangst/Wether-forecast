@@ -6,12 +6,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
+import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherforecast.R
+import com.example.weatherforecast.data.model.Forecast
 import com.example.weatherforecast.extension.afterTextChanged
 import com.example.weatherforecast.ui.adapter.ForecastAdapter
 import com.example.weatherforecast.ui.viewmodel.MainViewModel
@@ -26,6 +28,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var rvForecast: RecyclerView
     private lateinit var forecastAdapter: ForecastAdapter
     private lateinit var loading: ProgressBar
+    private lateinit var tvEmpty: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +42,7 @@ class MainActivity : AppCompatActivity() {
         edtSearch = findViewById(R.id.edtSearch)
         btnSearch = findViewById(R.id.btnSearch)
         rvForecast = findViewById(R.id.rvForecast)
+        tvEmpty = findViewById(R.id.tvEmpty)
         rvForecast.layoutManager = LinearLayoutManager(this)
         rvForecast.setHasFixedSize(true)
         rvForecast.addItemDecoration(
@@ -62,12 +66,27 @@ class MainActivity : AppCompatActivity() {
                 processLoading(it)
             },
             onCompleted = {
-                lifecycleScope.launchWhenResumed {
-                    forecastAdapter.setData(it)
-                }
+                displayResult(it)
             },
-            onError = {},
+            onError = {
+                processError(it ?: getString(R.string.common_error))
+            },
         )
+    }
+
+    private fun displayResult(result: List<Forecast>) {
+        lifecycleScope.launchWhenResumed {
+            forecastAdapter.setData(result)
+            tvEmpty.visibility = View.GONE
+        }
+    }
+
+    private fun processError(errorMsg: String) {
+        lifecycleScope.launch {
+            forecastAdapter.setData(emptyList())
+            tvEmpty.visibility = View.VISIBLE
+            tvEmpty.text = errorMsg
+        }
     }
 
     private fun processLoading(isLoading: Boolean) {

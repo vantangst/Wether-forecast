@@ -48,7 +48,6 @@
         android:id="@+id/tvEmpty"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@+id/rvForecast"
-        app:layout_constraintBottom_toBottomOf="@id/rvForecast"/>
+        app:layout_constraintTop_toTopOf="@+id/rvForecast"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
