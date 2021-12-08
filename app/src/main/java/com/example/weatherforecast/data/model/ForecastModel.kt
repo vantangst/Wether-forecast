@@ -67,7 +67,7 @@ data class Forecast(
     @SerializedName("dt") var date: Long? = null,
     @SerializedName("sunrise") var sunrise: Int? = null,
     @SerializedName("sunset") var sunset: Int? = null,
-    @SerializedName("temp") var temp: Temperature?,
+    @SerializedName("temp") var temp: Temperature? = null,
     @SerializedName("feels_like") var feelsLike: FeelsLike? = null,
     @SerializedName("pressure") var pressure: Int? = null,
     @SerializedName("humidity") var humidity: Int? = null,
