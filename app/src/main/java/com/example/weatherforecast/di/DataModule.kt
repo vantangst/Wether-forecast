@@ -1,7 +1,7 @@
 package com.example.weatherforecast.di
 
 import com.example.weatherforecast.data.api.ApiService
-import com.example.weatherforecast.data.api.ApiServiceImpl
+import com.example.weatherforecast.data.api.ApiServiceClient
 import dagger.Provides
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -15,6 +15,6 @@ class DataModule {
     @Provides
     @Singleton
     fun providerCooker(@NetworkModule.OtherInterceptorOkHttpClient okHttpClient: OkHttpClient): ApiService {
-        return ApiServiceImpl.build(okHttpClient)
+        return ApiServiceClient.build(okHttpClient)
     }
 }

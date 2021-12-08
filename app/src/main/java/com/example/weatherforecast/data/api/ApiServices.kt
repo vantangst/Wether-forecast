@@ -9,7 +9,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-
 interface ApiService {
     @GET(ApiEndpoint.DAILY_FORECAST)
     suspend fun getDailyForecast(
@@ -20,8 +19,7 @@ interface ApiService {
     ): Response<ForecastModel?>
 }
 
-
-object ApiServiceImpl {
+object ApiServiceClient {
     fun build(client: OkHttpClient): ApiService {
         val builder = Retrofit.Builder()
             .baseUrl(BuildConfig.BASE_URL)
