@@ -7,7 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.TextView
-import androidx.activity.viewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,10 +19,11 @@ import com.example.weatherforecast.ui.adapter.ForecastAdapter
 import com.example.weatherforecast.ui.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import org.jetbrains.annotations.TestOnly
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-    private val viewModel: MainViewModel by viewModels()
+    private lateinit var viewModel: MainViewModel
     private lateinit var edtSearch: EditText
     private lateinit var btnSearch: Button
     private lateinit var rvForecast: RecyclerView
@@ -33,6 +34,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        viewModel = ViewModelProvider(this)[MainViewModel::class.java]
         initView()
         observeData()
     }
@@ -101,5 +103,10 @@ class MainActivity : AppCompatActivity() {
         viewModel.isEnableSearchButton.observe(this) {
             btnSearch.isEnabled = it
         }
+    }
+
+    @TestOnly
+    fun setTestViewModel(testViewModel: MainViewModel) {
+        viewModel = testViewModel
     }
 }
