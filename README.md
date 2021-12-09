@@ -14,6 +14,7 @@ Build an android app to retrieve weather information based on their searching cr
 
 ## Project Structure
 For the project, we built a version of MVVM. Our package in the project will look like below:
+
 ![image](https://user-images.githubusercontent.com/13620155/145409226-e4b9d70e-deaa-4812-87c6-9a55cbc50097.png)
 
 ## App Components
@@ -41,6 +42,16 @@ must be from 3 characters or above.
 clearly.
 - The application is able to support the disability to read out the text using VoiceOver
 controls.
+
+## Note
+- I have done for 6/10 items at Problem Statement. I don't have time to finish all items.
+- I have done Unit test for logic code (`repository`, `viewmodel`) and some basic test case for ui test (`view`)
+- I am a beginer writing UI test so just some basic test was written.
+
+## Screenshots
+
+![wheather app screenshot](https://user-images.githubusercontent.com/13620155/145417831-69c8b727-e436-4247-bb0b-cca525d64600.gif)
+
 
 ## Development
 Bellow are the obligatory requirements that you must meet to run project:
