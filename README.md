@@ -4,10 +4,26 @@
 Build an android app to retrieve weather information based on their searching criteria and render the searched results on dashboard screen.
 
 ## Problem solved
-We will build an MVVM version with Retrofit to call and retrieve data from OpenWeatherMapsAPI.
+- Used MVVM for design partent
+- Used Retrofit to call and retrieve data from OpenWeatherMapsAPI.
+- Used Hilt for dependency injection with Hilt
 #### For more detail:
 - MVVM architecture: https://developer.android.com/jetpack/guide
 - Retrofit: https://square.github.io/retrofit/
+- Hilt: https://developer.android.com/training/dependency-injection/hilt-android
+
+## Project Structure
+For the project, we built a version of MVVM. Our package in the project will look like below:
+![image](https://user-images.githubusercontent.com/13620155/145409226-e4b9d70e-deaa-4812-87c6-9a55cbc50097.png)
+
+## App Components
+All the architecture components are as follows:
+### Foundation Components
+- Test: mockito, junit4 for local testing
+### Architecture Components
+- LiveData: Notify views of any database changes.
+- ViewModel: Manage UI-related data in a lifecycle-conscious way.
+- Lifecycles: Manages activity lifecycles of our app.
 
 ## Features
 - The application is a simple Androidapplication which is written by Java/Kotlin.
