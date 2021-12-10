@@ -4,36 +4,42 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="@dimen/padding_item_list"
+    android:focusable="true"
     android:orientation="vertical">
 
     <TextView
         android:id="@+id/tvDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="Date: Tue, 10 Mar 2020" />
+        tools:text="Date: Tue, 10 Mar 2020"
+        android:importantForAccessibility="no" />
 
     <TextView
         android:id="@+id/tvAvgTemperature"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="Average temperature: 20C" />
+        tools:text="Average temperature: 20C"
+        android:importantForAccessibility="no" />
 
     <TextView
         android:id="@+id/tvPressure"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="Pressure: 1031" />
+        tools:text="Pressure: 1031"
+        android:importantForAccessibility="no" />
 
     <TextView
         android:id="@+id/tvHumidity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="Humidity: 72%" />
+        tools:text="Humidity: 72%"
+        android:importantForAccessibility="no" />
 
     <TextView
         android:id="@+id/tvDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="Description: sky is clear" />
+        tools:text="Description: sky is clear"
+        android:importantForAccessibility="no" />
 
 </LinearLayout>
