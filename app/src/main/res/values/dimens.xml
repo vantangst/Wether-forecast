@@ -2,4 +2,7 @@
 <resources>
     <dimen name="padding_item_list">4dp</dimen>
     <dimen name="loading_progress_edit_text_size">30dp</dimen>
+    <dimen name="text_size_input">16sp</dimen>
+    <dimen name="text_size_label">14sp</dimen>
+    <dimen name="text_size_button">16sp</dimen>
 </resources>

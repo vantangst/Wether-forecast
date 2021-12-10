@@ -13,4 +13,16 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="PrimaryEditText">
+        <item name="android:textSize">@dimen/text_size_input</item>
+    </style>
+
+    <style name="PrimaryText">
+        <item name="android:textSize">@dimen/text_size_label</item>
+    </style>
+
+    <style name="PrimaryButton">
+        <item name="android:textSize">@dimen/text_size_button</item>
+    </style>
 </resources>

@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         android:paddingEnd="@dimen/loading_progress_edit_text_size"
         android:paddingStart="0dp"
+        style="@style/PrimaryEditText"
         android:autofillHints="@string/search_forecast_hint" />
 
     <ProgressBar
@@ -28,6 +29,7 @@
 
     <Button
         android:id="@+id/btnSearch"
+        style="@style/PrimaryButton"
         app:layout_constraintTop_toBottomOf="@+id/edtSearch"
         app:layout_constraintStart_toStartOf="parent"
         android:text="@string/btn_get_weather"
@@ -50,6 +52,7 @@
 
     <TextView
         android:id="@+id/tvEmpty"
+        style="@style/PrimaryText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@+id/rvForecast"/>

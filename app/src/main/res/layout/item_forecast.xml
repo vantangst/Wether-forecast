@@ -9,6 +9,7 @@
 
     <TextView
         android:id="@+id/tvDate"
+        style="@style/PrimaryText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:text="Date: Tue, 10 Mar 2020"
@@ -16,6 +17,7 @@
 
     <TextView
         android:id="@+id/tvAvgTemperature"
+        style="@style/PrimaryText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:text="Average temperature: 20C"
@@ -23,6 +25,7 @@
 
     <TextView
         android:id="@+id/tvPressure"
+        style="@style/PrimaryText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:text="Pressure: 1031"
@@ -30,6 +33,7 @@
 
     <TextView
         android:id="@+id/tvHumidity"
+        style="@style/PrimaryText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:text="Humidity: 72%"
@@ -37,6 +41,7 @@
 
     <TextView
         android:id="@+id/tvDescription"
+        style="@style/PrimaryText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:text="Description: sky is clear"
