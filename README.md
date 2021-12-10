@@ -6,10 +6,11 @@ Build an android app to retrieve weather information based on their searching cr
 
 ## Problem Solution
 
-- Used MVVM design pattern
+- Written by Kotlin.
+- Used MVVM design pattern.
 - Used Retrofit as a REST client to call and retrieve data from OpenWeatherMapsAPI.
-- Used Hilt for dependency injection
-- Accessibility for Disability Supports
+- Used Hilt for dependency injection.
+- Accessibility for Disability Supports.
 
 #### If you want to know more:
 
@@ -45,24 +46,26 @@ The Android application is written by Kotlin is able to
 
 - Retrieve the weather information from OpenWeatherMapsAPI.
 - Allow users to enter the searching term.
-- Proceed to search if the search term length is at least 3 characters
-- Show the searched results as a list
+- Proceed to search if the search term length is at least 3 characters.
+- Show the searched results as a list.
 - Able to handle failures like network down, etc.
 - Caching mechanism to prevent the app from generating a bunch of API requests.
 - Manage caching mechanism & lifecycle.
 - Support the disability to read out the text with Talkback.
+- Support the disability to scale large text for those who can't see the text clearly.
 
 ## Next steps
 
-The application can be enhanced to support
+The application can be enhanced more for
 
-- Support the disability to scale large text for those who can't see the text clearly.
+- Add more local test for ui.
+- Unit test for Exception case (`Checked exception` issue), ApiService interface.
 
 ## Note
 
 - I have done 8/10 items at Problem Statement. I don't have time to finish all items.
 - I have done a Unit test for logic code (`Repository`, `ViewModel`) and some basic test cases for UI test (`View`).
-- UI from the requirement is not good enough, need to discuss and improve later
+- UI from the requirement is not good enough, need to discuss and improve later.
 
 ## Runnable app
 
