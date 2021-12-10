@@ -15,6 +15,7 @@ Build an android app to retrieve weather information based on their searching cr
 - MVVM architecture: https://developer.android.com/jetpack/guide
 - Retrofit: https://square.github.io/retrofit/
 - Hilt: https://developer.android.com/training/dependency-injection/hilt-android
+- Caching: https://bapspatil.medium.com/caching-with-retrofit-store-responses-offline-71439ed32fda
 
 ## Project Structure
 
@@ -45,19 +46,19 @@ The Android application is written by Kotlin is able to
 - Proceed to search if the search term length is at least 3 characters
 - Show the searched results as a list
 - Able to handle failures like network down, etc.
+- Caching mechanism to prevent the app from generating a bunch of API requests.
+- Manage caching mechanism & lifecycle.
 
 ## Next steps
 
 The application can be enhanced to support
 
-- Caching mechanism to prevent the app from generating a bunch of API requests.
-- Manage caching mechanism & lifecycle.
 - Support the disability to scale large text for those who can't see the text clearly.
 - Support the disability to read out the text using VoiceOver controls.
 
 ## Note
 
-- I have done 6/10 items at Problem Statement. I don't have time to finish all items.
+- I have done 8/10 items at Problem Statement. I don't have time to finish all items.
 - I have done a Unit test for logic code (`Repository`, `ViewModel`) and some basic test cases for UI test (`View`).
 - UI from the requirement is not good enough, need to discuss and improve later
 
