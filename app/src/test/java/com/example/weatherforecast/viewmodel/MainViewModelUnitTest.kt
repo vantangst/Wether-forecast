@@ -30,8 +30,8 @@ class MainViewModelUnitTest {
     private lateinit var mainViewModel: MainViewModel
     private lateinit var forecastRepository: ForecastRepository
     private lateinit var isEnableSearchButtonObserver: Observer<Boolean>
-    private val keywordValid = "abc"
-    private val keywordInvalid = "ab"
+    private val keywordValid = "saigon"
+    private val keywordInvalid = "sa"
     private val appId = BuildConfig.WEATHER_APP_ID
     private val unitsType = TemperatureType.C.value
     private val successCode = ApiCode.SUCCESS.value
@@ -56,7 +56,7 @@ class MainViewModelUnitTest {
 
     @Test
     @ExperimentalCoroutinesApi
-    fun `should return ForecastModel data from ForecastRepository when call getDailyForecast() success`() = runBlockingTest {
+    fun `should be notified after fetched wheather data`() = runBlockingTest {
         // Arrange
         val forecastModel = ForecastModel(list = listOf(Forecast()))
         val apiResponse = ApiResponse<ForecastModel?, ApiError?>()
@@ -82,7 +82,7 @@ class MainViewModelUnitTest {
 
     @Test
     @ExperimentalCoroutinesApi
-    fun `should return ApiError when call getDailyForecast() getDailyForecast fail`() = runBlockingTest {
+    fun `should return ApiError when call getDailyForecast() fail`() = runBlockingTest {
         // Arrange
         val apiResponse = ApiResponse<ForecastModel?, ApiError?>()
         apiResponse.code(failCode)

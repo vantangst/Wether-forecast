@@ -18,8 +18,8 @@ class ForecastRepositoryUnitTest {
 
     private lateinit var apiService: ApiService
     private lateinit var forecastRepository: ForecastRepository
-    private val keyword = "abc"
-    private val appId = "abcdefghr"
+    private val keyword = "saigon"
+    private val appId = "61c6fbec4b93ac653c492ba806fc345d"
     private val unitsType = "Metric"
     private val forecastDays = 5
 
@@ -33,7 +33,7 @@ class ForecastRepositoryUnitTest {
 
     @Test
     @ExperimentalCoroutinesApi
-    fun `should return ForecastModel data from ForecastRepository when call getDailyForecast() success`() = runBlockingTest {
+    fun `should return forecast data when call getDailyForecast() success`() = runBlockingTest {
         // Arrange
         val forecastModel = Mockito.mock(
             ForecastModel::class.java
@@ -53,7 +53,7 @@ class ForecastRepositoryUnitTest {
 
     @Test
     @ExperimentalCoroutinesApi
-    fun `should return null from ForecastRepository when call getDailyForecast() fail`() = runBlockingTest {
+    fun `should return empty data when backend error`() = runBlockingTest {
         // Arrange
         val responseBody = Mockito.mock(
             ResponseBody::class.java
@@ -73,7 +73,7 @@ class ForecastRepositoryUnitTest {
 
     @Test
     @ExperimentalCoroutinesApi
-    fun `should return null from ForecastRepository when call getDailyForecast() fail with Exception`() = runBlockingTest {
+    fun `should return empty data when some unkown error happened`() = runBlockingTest {
 
         Mockito.`when`(
             apiService.getDailyForecast(keyword, forecastDays, appId, unitsType)
@@ -83,8 +83,8 @@ class ForecastRepositoryUnitTest {
         val result = forecastRepository.getDailyForecast(keyword, forecastDays, appId, unitsType)
 
         // Assert
-        Assert.assertEquals(ApiCode.UNKNOWN.value, result.error()?.cod ?: 0)
+        Assert.assertEquals(ApiCode.UNKNOWN.value, result.error()?.code ?: 0)
     }
 
-   // todo add 1 more test function for case: ConnectException
+   // todo add 1 more test function for case: UnknownHostException
 }

@@ -40,6 +40,7 @@ class MainActivityUnitTest {
         Forecast(date = 1632037296),
         Forecast(date = 1631037296),
     )
+    private val keywordValid = "saigon"
 
     private lateinit var activity: MainActivity
     private lateinit var activityController: ActivityController<MainActivity>
@@ -95,8 +96,8 @@ class MainActivityUnitTest {
 
     @Test
     fun `should change text when input data`() {
-        edtSearch.setText("aaa")
+        edtSearch.setText(keywordValid)
         btnSearch.performClick()
-        assertEquals("aaa", edtSearch.text.toString())
+        assertEquals(keywordValid, edtSearch.text.toString())
     }
 }
