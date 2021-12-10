@@ -14,7 +14,7 @@ import javax.inject.Singleton
 class DataModule {
     @Provides
     @Singleton
-    fun providerCooker(@NetworkModule.OtherInterceptorOkHttpClient okHttpClient: OkHttpClient): ApiService {
+    fun providerCooker(@NetworkModule.CacheInterceptorOkHttpClient okHttpClient: OkHttpClient): ApiService {
         return ApiServiceClient.build(okHttpClient)
     }
 }

@@ -1,13 +1,13 @@
 package com.example.weatherforecast.di
 
-import com.example.weatherforecast.BuildConfig
+import android.content.Context
+import com.example.weatherforecast.data.api.ApiClientFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
-import java.util.concurrent.TimeUnit
+import okhttp3.*
 import javax.inject.Qualifier
 
 @Module
@@ -18,20 +18,13 @@ object NetworkModule {
     @Retention(AnnotationRetention.BINARY)
     annotation class OtherInterceptorOkHttpClient
 
-    @OtherInterceptorOkHttpClient
+    @Qualifier
+    @Retention(AnnotationRetention.BINARY)
+    annotation class CacheInterceptorOkHttpClient
+
+    @CacheInterceptorOkHttpClient
     @Provides
-    fun provideOtherInterceptorOkHttpClient(): OkHttpClient {
-        val httpClient =  OkHttpClient.Builder()
-        httpClient.connectTimeout(30, TimeUnit.SECONDS)
-        httpClient.readTimeout(30, TimeUnit.SECONDS)
-        httpClient.writeTimeout(30, TimeUnit.SECONDS)
-        if (BuildConfig.DEBUG) {
-            val logging = HttpLoggingInterceptor()
-            logging.apply {
-                logging.level = HttpLoggingInterceptor.Level.BODY
-            }
-            httpClient.interceptors().add(logging)
-        }
-        return httpClient.build()
+    fun provideCacheInterceptorOkHttpClient(@ApplicationContext context: Context): OkHttpClient {
+        return ApiClientFactory.createWithCache(context)
     }
 }
