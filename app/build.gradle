@@ -28,7 +28,7 @@ android {
         release {
             buildConfigField "String", "BASE_URL", localProperties.getProperty("BASE_URL", "")
             buildConfigField "String", "WEATHER_APP_ID", localProperties.getProperty("WEATHER_APP_ID", "")
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
