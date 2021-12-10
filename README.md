@@ -9,6 +9,7 @@ Build an android app to retrieve weather information based on their searching cr
 - Used MVVM design pattern
 - Used Retrofit as a REST client to call and retrieve data from OpenWeatherMapsAPI.
 - Used Hilt for dependency injection
+- Accessibility for Disability Supports
 
 #### If you want to know more:
 
@@ -16,6 +17,7 @@ Build an android app to retrieve weather information based on their searching cr
 - Retrofit: https://square.github.io/retrofit/
 - Hilt: https://developer.android.com/training/dependency-injection/hilt-android
 - Caching: https://bapspatil.medium.com/caching-with-retrofit-store-responses-offline-71439ed32fda
+- Talkback: https://medium.com/microsoft-mobile-engineering/android-accessibility-resolving-common-talkback-issues-3c45076bcdf6
 
 ## Project Structure
 
@@ -48,13 +50,13 @@ The Android application is written by Kotlin is able to
 - Able to handle failures like network down, etc.
 - Caching mechanism to prevent the app from generating a bunch of API requests.
 - Manage caching mechanism & lifecycle.
+- Support the disability to read out the text with Talkback.
 
 ## Next steps
 
 The application can be enhanced to support
 
 - Support the disability to scale large text for those who can't see the text clearly.
-- Support the disability to read out the text using VoiceOver controls.
 
 ## Note
 
@@ -65,6 +67,8 @@ The application can be enhanced to support
 ## Runnable app
 
 ![wheather app screenshot](https://user-images.githubusercontent.com/13620155/145417831-69c8b727-e436-4247-bb0b-cca525d64600.gif)
+![c9272c39fe9935c76c88](https://user-images.githubusercontent.com/13620155/145570512-707258f1-8343-4532-a3a8-a1710d3675fe.jpg)
+
 
 ## Development
 
