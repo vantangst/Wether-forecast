@@ -59,6 +59,7 @@ The application can be enhanced to support
 
 - I have done 6/10 items at Problem Statement. I don't have time to finish all items.
 - I have done a Unit test for logic code (`Repository`, `ViewModel`) and some basic test cases for UI test (`View`).
+- UI from the requirement is not good enough, need to discuss and improve later
 
 ## Runnable app
 
