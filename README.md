@@ -24,7 +24,7 @@ Build an android app to retrieve weather information based on their searching cr
 
 The project is built using the MVVM model. The package structure will look like below:
 
-![image](https://user-images.githubusercontent.com/13620155/145409226-e4b9d70e-deaa-4812-87c6-9a55cbc50097.png)
+![image](https://user-images.githubusercontent.com/13620155/145409226-e4b9d70e-deaa-4812-87c6-9a55cbc50097.png "Project Structure")
 
 ## App Components
 
@@ -69,8 +69,9 @@ The application can be enhanced more for
 
 ## Runnable app
 
-![wheather app screenshot](https://user-images.githubusercontent.com/13620155/145417831-69c8b727-e436-4247-bb0b-cca525d64600.gif)
-![c9272c39fe9935c76c88](https://user-images.githubusercontent.com/13620155/145570512-707258f1-8343-4532-a3a8-a1710d3675fe.jpg)
+![wheather app screenshot](https://user-images.githubusercontent.com/13620155/145417831-69c8b727-e436-4247-bb0b-cca525d64600.gif "Light mode | fetched data from weather API")
+
+![c9272c39fe9935c76c88](https://user-images.githubusercontent.com/13620155/145570512-707258f1-8343-4532-a3a8-a1710d3675fe.jpg "Dark mode | Talkback feature")
 
 
 ## Development
